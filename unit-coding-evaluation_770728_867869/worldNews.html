@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>World News</title>
+
+  <style>
+    #navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      height: 50px;
+      background-color: aquamarine;
+
+    }
+
+    .news {
+      /* width: 100px;
+      height: 100px; */
+      border: 1px black solid;
+    }
+
+    .news img {
+      width: 100%;
+    }
+
+    #container {
+      width: 95%;
+      margin: auto;
+      display: flex;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    #sidebar {
+      width: 20%;
+      border: 1px black solid;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /* justify-content: center; */
+    }
+
+
+    #news_result {
+      width: 80%;
+      border: 1px black solid;
+      height: 100vh;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px
+    }
+
+    #sidebar img {
+      width: 100px;
+      height: 130px;
+      border: 1px black solid;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <div id="navbar">
+
+
+
+      <div>
+        <form>
+
+          <input type="search" placeholder="search" id="search_box" />
+        </form>
+      </div>
+
+
+      <div id="in" onclick="india()">India</div>
+      <div id="us" onclick="usa()">Usa</div>
+      <div id="ch" onclick="china()">China</div>
+      <div id="uk" onclick="uk()">UK</div>
+      <div id="nz" onclick="nz()">New Zeland</div>
+    </div>
+    <!-- - The nav-bar will have following :- 
+     * search box with Id as- "search_box"
+     * Link for different country news with IDs as:-
+       - India :- “in”
+       - Usa :- “us”
+       - China :- “ch”
+       - UK :- “uk”
+       - New Zealand :- “nz” -->
+  </div>
+  </div>
+  <div id="container">
+    <div id="sidebar">
+
+
+      <!-- Sidebar will have - Image of user (Id:- "user_img" ) - Name of user (Id:- "user_name" ) - Email of user
+        (Id:- "user_email" ) - Country of user (Id:- "user_country) -->
+    </div>
+    <div id="news_result">
+      <!-- - All the news will be appended inside div with id as "news_result".
+ - Every news card will have class as "news" (Show image, title and author only in cards). -->
+    </div>
+  </div>
+</body>
+
+</html>
+<script src="./scripts/worldNews.js" type="module"></script>
