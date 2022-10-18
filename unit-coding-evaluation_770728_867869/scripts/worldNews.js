@@ -1,33 +1,31 @@
 import { sidebar } from "./sidebar.js";
 document.getElementById("sidebar").innerHTML = sidebar();
 
-let arr = JSON.parse(localStorage.getItem("user")) || [];
+let arr = JSON.parse(localStorage.getItem("user")) || {};
 
-for (let i = 0; i < arr.length; i++) {
-  if (arr[i].country == "in") {
-    document.getElementById("user_country").innerText = "india";
-  }
-
-  if (arr[i].country == "uk") {
-    document.getElementById("user_country").innerText = "UK";
-  }
-  if (arr[i].country == "us") {
-    document.getElementById("user_country").innerText = "USA";
-  }
-  if (arr[i].country == "nz") {
-    document.getElementById("user_country").innerText = "Newzeland";
-  }
-  if (arr[i].country == "ch") {
-    document.getElementById("user_country").innerText = "china";
-  }
-  document.getElementById("user_img").src = arr[i].image;
-  document.getElementById("user_email").innerText = arr[i].email;
-  document.getElementById("user_name").innerText = arr[i].name;
+if (arr.country == "in") {
+  document.getElementById("user_country").innerText = "india";
 }
+
+if (arr.country == "uk") {
+  document.getElementById("user_country").innerText = "UK";
+}
+if (arr.country == "us") {
+  document.getElementById("user_country").innerText = "USA";
+}
+if (arr.country == "nz") {
+  document.getElementById("user_country").innerText = "Newzeland";
+}
+if (arr.country == "ch") {
+  document.getElementById("user_country").innerText = "china";
+}
+document.getElementById("user_img").src = arr.image;
+document.getElementById("user_email").innerText = arr.email;
+document.getElementById("user_name").innerText = arr.name;
 
 var ar = JSON.parse(localStorage.getItem("user")) || {};
 
-// console.log(ar.country);
+console.log(ar.country);
 async function defalt() {
   //   let val = ar[0].country;
 
@@ -105,6 +103,7 @@ function show(aray) {
     document.getElementById("news_result").append(div);
   });
 }
+document.getElementById("us").addEventListener("click", usa);
 
 async function usa() {
   //   let val = ar[0].country;
@@ -120,6 +119,7 @@ async function usa() {
   }
 }
 
+document.getElementById("in").addEventListener("click", india);
 async function india() {
   //   let val = ar[0].country;
   try {
@@ -133,7 +133,7 @@ async function india() {
     console.log(er);
   }
 }
-
+document.getElementById("uk").addEventListener("click", uk);
 async function uk() {
   //   let val = ar[0].country;
   try {
@@ -147,6 +147,8 @@ async function uk() {
     console.log(er);
   }
 }
+
+document.getElementById("ch").addEventListener("click", china);
 
 async function china() {
   //   let val = ar[0].country;
@@ -162,6 +164,7 @@ async function china() {
   }
 }
 
+document.getElementById("nz").addEventListener("click", nz);
 async function nz() {
   //   let val = ar[0].country;
   try {
